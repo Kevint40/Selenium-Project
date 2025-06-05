@@ -1,0 +1,21 @@
+package org.example;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AdvancedAutomation {
+    public static void main(String[] args) {
+
+        WebDriverManager.chromedriver().setup();
+
+        // Initialize WebDriver
+        WebDriver driver = new ChromeDriver();
+
+        // Open site
+        driver.get("https://www.expedia.com/");
+       //click checkbox button
+        driver. findElement(By.name("add-flight-switch")).click();
+    }
+}
