@@ -1,0 +1,26 @@
+package org.example;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.time.Duration;
+
+public class AdvancedAutomation {
+    public static void main(String[] args) {
+
+        WebDriverManager.chromedriver().setup();
+
+        // Initialize WebDriver
+        WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+
+        // Open site
+        driver.get("https://demoqa.com/radio-button#google_vignette");
+        //click radio button
+        WebElement radio1 = driver.findElement(By.cssSelector("#app > div > div > div > div.col-12.mt-4.col-md-6 > div:nth-child(3) > div:nth-child(2) > label"));
+        radio1.click();
+    }
+}
